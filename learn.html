@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button Ripple Effects</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<a href="#">Button</a>
+<a href="#">Button</a> 
+<script type="text/javascript">
+	const Button = document.querySelectorAll('a');
+	buttons.forEach(btn => {
+		btn.addEventListener('click',function(e){
+
+			let x = e.clientX - e.target.offsetLeft;
+			let y = e.clientY- e.target.offsetTop;
+			let ripples = document.createElement('span');
+			ripples.style.left = x + 'px';
+			ripples.style.top = y + 'px';
+			this.appendChild(ripples);
+
+			setTimeOut(() => {
+				ripples.remove()
+			},1000);
+		})
+	})
+</script>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TnVnavzD_M4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+</html>
